@@ -1,0 +1,25 @@
+[package]
+name = "zk-altjubjub"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+blake-hash = {version="0.4.0", optional=true}
+zkwasm-host-circuits = { git = "https://github.com/DelphinusLab/zkWasm-host-circuits.git", default-features = true, branch="main"}
+sha2 = "0.10.8"
+lazy_static = "1.4.0"
+num-bigint = { version = "0.4", features = ["rand"] }
+num-traits = "0.2.8"
+ark-std = { version = "0.3.0", features = ["print-trace"] }
+halo2_proofs = { git = "https://github.com/DelphinusLab/halo2-gpu-specific.git", default-features = true }
+halo2ecc-s = { git = "https://github.com/DelphinusLab/halo2ecc-s.git", tag = "bisect-lookup-0.5.6#3b8b424f"}
+rand = "0.8"
+poseidon-rs = "0.0.8"
+
+[dev-dependencies]
+criterion = "0.3"
+hex = "0.4"
+
+[features]
+default = ["blake-hash"]
